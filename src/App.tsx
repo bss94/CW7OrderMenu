@@ -1,6 +1,8 @@
 import {useState} from 'react';
 import './App.css';
 import OrderItem from './components/OrderItem/OrderItem.tsx';
+import MenuItem from './components/MenuItem/MenuItem.tsx';
+import MenuList from './components/MenuList/MenuList.tsx';
 
 
 interface OrderPosition {
@@ -26,7 +28,7 @@ function App() {
 
     return (
         <>
-<OrderItem name={'Fruits'} count={5}/>
+        <MenuList/>
         </>
     );
 }

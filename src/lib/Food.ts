@@ -11,7 +11,7 @@ import green from '../assets/green.png';
 import herbs from '../assets/herbs.png';
 
 
-interface Food {
+export interface Food {
     name: string;
     category: string;
     price: number;
@@ -19,17 +19,17 @@ interface Food {
 }
 
 const MENU: Food[] = [
-    {name: 'Chocolate', price: 150, category: 'dessert', image: chocolateImg},
-    {name: 'Fruits', price: 100, category: 'dessert', image: fruits},
-    {name: 'Waffles', price: 180, category: 'dessert', image: waffles},
-    {name: 'Tiramisu', price: 180, category: 'dessert', image: tiramisu},
-    {name: 'Espresso', price: 150, category: 'coffee', image: espresso},
-    {name: 'Americano', price: 170, category: 'coffee', image: americano},
-    {name: 'Cappuccino', price: 200, category: 'coffee', image: cappuccino},
-    {name: 'Latte', price: 200, category: 'coffee', image: latte},
-    {name: 'Black', price: 80, category: 'tea', image: black},
-    {name: 'Green', price: 70, category: 'tea', image: green},
-    {name: 'Herbs', price: 100, category: 'tea', image: herbs},
+    {name: 'Chocolate', price: 150, category: 'Dessert', image: chocolateImg},
+    {name: 'Fruits', price: 100, category: 'Dessert', image: fruits},
+    {name: 'Waffles', price: 180, category: 'Dessert', image: waffles},
+    {name: 'Tiramisu', price: 180, category: 'Dessert', image: tiramisu},
+    {name: 'Espresso', price: 150, category: 'Coffee', image: espresso},
+    {name: 'Americano', price: 170, category: 'Coffee', image: americano},
+    {name: 'Cappuccino', price: 200, category: 'Coffee', image: cappuccino},
+    {name: 'Latte', price: 200, category: 'Coffee', image: latte},
+    {name: 'Black', price: 80, category: 'Tea', image: black},
+    {name: 'Green', price: 70, category: 'Tea', image: green},
+    {name: 'Herbs', price: 100, category: 'Tea', image: herbs},
 
 
 ];

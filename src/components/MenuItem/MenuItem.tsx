@@ -1,10 +1,18 @@
 import React from 'react';
 
-const MenuItem = () => {
+
+interface Props {
+    name: string;
+    price:number;
+    pic:string;
+}
+const MenuItem:React.FC<Props> = ({name,price,pic}) => {
     return (
-        <div>
-            
-        </div>
+        <button className={'menu-item'}>
+            <img src={pic} alt={'not found'}/>
+            <span> {name} </span>
+            <span> Price: {price} som</span>
+        </button>
     );
 };
 
