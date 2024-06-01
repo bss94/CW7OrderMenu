@@ -28,27 +28,36 @@ function App() {
     const onHandleMenu = (id: number) => {
         setOrder(prevState => {
                 return prevState.map((el) => {
-                        if (el.id === id) {
-                            return {...el, count: el.count++};
-                        }else return {...el};
+                        if (id === el.id) {
+                            return {...el, count: el.count+1};
+                        }else return el;
                 });
         });
     };
     const onHandleOrder = (id: number) => {
         setOrder(prevState => {
             return prevState.map((el) => {
-                if (el.id === id) {
-                    return {...el, count: el.count--};
-                }else return {...el};
+                if (id === el.id) {
+                    return {...el, count: el.count-1};
+                }else return el;
+            });
+        });
+    };
+    const onHandleDelete = (id: number) => {
+        setOrder(prevState => {
+            return prevState.map((el) => {
+                if (id === el.id) {
+                    return {...el, count: 0};
+                }else return el;
             });
         });
     };
 
     return (
-        <>
-            <OrderList order={order} onHandleOrder={onHandleOrder}/>
+        <div className={'container'}>
+            <OrderList order={order} onHandleOrder={onHandleOrder} onHandleDelete={onHandleDelete}/>
             <MenuList OnHandleMenu={onHandleMenu}/>
-        </>
+        </div>
     );
 }
 
