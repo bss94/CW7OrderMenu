@@ -2,22 +2,26 @@ import React from 'react';
 import MENU from '../../lib/Food.ts';
 
 interface Props {
+    onHandleOrder:React.MouseEventHandler
     name: string;
     count: number;
+    id: number;
 }
 
 const OrderItem: React.FC<Props> = ({
                                         name,
-                                        count
+                                        count,
+                                        id,
+                                        onHandleOrder
                                     }) => {
     return (
-        <div>
+        <div onClick={onHandleOrder}>
             <span> {name} </span>
             <span> x{count} </span>
             {MENU
-                .filter((item) => name === item.name)
+                .filter((item) => id === item.id)
                 .map(el => {
-                    return <span> {el.price * count} </span>;
+                    return <span key={String(el.price+el.id)}> {el.price * count} </span>;
                 })
             }
         </div>

@@ -5,13 +5,15 @@ import MenuCategory from '../MenuCategory/MenuCategory.tsx';
 
 
 interface Props{
-
+    OnHandleMenu:(id:number)=>void
 }
-const MenuList:React.FC<Props>= () => {
+const MenuList:React.FC<Props>= ({OnHandleMenu}) => {
     return (
         <div className={'menu'}>
             {CATEGORIES.map((item,index)=>{
-                return <MenuCategory category={item.name} key={String(index+1)+item.name}/>
+                return <MenuCategory OnHandleMenu={OnHandleMenu}
+                                     category={item.name}
+                                     key={String(index+1)+item.name}/>
             })}
             
         </div>

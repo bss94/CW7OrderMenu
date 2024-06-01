@@ -3,14 +3,19 @@ import {OrderPosition} from '../../App.tsx';
 import OrderItem from '../OrderItem/OrderItem.tsx';
 
 interface Props{
-    order: OrderPosition[]
+    order: OrderPosition[];
+    onHandleOrder:(id:number)=>void;
 }
-const OrderList:React.FC<Props> = ({order}) => {
+const OrderList:React.FC<Props> = ({order,onHandleOrder}) => {
     return (
         <div>
             {order.map((el,index)=>{
                 if(el.count>0){
-                    return <OrderItem name={el.name} count={el.count} key={String(index+1)+el.name+'Order'}/>
+                    return <OrderItem name={el.name}
+                                      count={el.count}
+                                      id={el.id}
+                                      onHandleOrder={()=>onHandleOrder(el.id)}
+                                      key={String(index)+String(el.id)}/>
                 }
             })}
             
