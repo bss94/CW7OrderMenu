@@ -9,8 +9,8 @@ const MenuCategory:React.FC<Props> = ({category}) => {
     return (
         <div>
             <h3>{category}</h3>
-            {MENU.filter(item=>item.category===category).map((el)=>{
-                return <MenuItem name={el.name} pic={el.image} price={el.price}/>
+            {MENU.filter(item=>item.category===category).map((el,index)=>{
+                return <MenuItem name={el.name} pic={el.image} price={el.price} key={String(index+1)+el.name+'OnMenu'}/>
             })}
         </div>
     );

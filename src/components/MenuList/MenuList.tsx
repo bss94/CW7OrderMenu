@@ -10,8 +10,8 @@ interface Props{
 const MenuList:React.FC<Props>= () => {
     return (
         <div className={'menu'}>
-            {CATEGORIES.map((item)=>{
-                return <MenuCategory category={item.name}/>
+            {CATEGORIES.map((item,index)=>{
+                return <MenuCategory category={item.name} key={String(index+1)+item.name}/>
             })}
             
         </div>

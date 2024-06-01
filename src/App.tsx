@@ -1,11 +1,10 @@
 import {useState} from 'react';
 import './App.css';
-import OrderItem from './components/OrderItem/OrderItem.tsx';
-import MenuItem from './components/MenuItem/MenuItem.tsx';
 import MenuList from './components/MenuList/MenuList.tsx';
+import OrderList from './components/OrderList/OrderList.tsx';
 
 
-interface OrderPosition {
+export interface OrderPosition {
     name: string;
     count: number;
 }
@@ -28,7 +27,8 @@ function App() {
 
     return (
         <>
-        <MenuList/>
+            <OrderList order={order}/>
+            <MenuList/>
         </>
     );
 }
