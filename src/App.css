@@ -42,8 +42,31 @@
     justify-content: space-between;
     flex-direction: column;
 }
-.item-count{}
-.item-cost{}
+.item-count{
+    width: 35px;
+    text-align: start;
+}
+.item-coast{
+    width: 35px;
+    text-align: start;
+}
+.total-price{
+    width: 100%;
+    text-align: right;
+    padding-right: 25px;
+    font-weight: bold;
+    position: relative;
+}
+.total-price:after{
+    position: absolute;
+    content: '';
+    width: 125px;
+    height: 1px;
+    background-color: #000;
+    top:-12px;
+    right: 22px;
+
+}
 
 .menu {
     box-sizing: border-box;
