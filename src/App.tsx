@@ -27,19 +27,19 @@ function App() {
 
     const onHandleMenu = (id: number) => {
         setOrder(prevState => {
-                return prevState.map((el) => {
-                        if (id === el.id) {
-                            return {...el, count: el.count+1};
-                        }else return el;
-                });
+            return prevState.map((el) => {
+                if (id === el.id) {
+                    return {...el, count: el.count + 1};
+                } else return el;
+            });
         });
     };
     const onHandleOrder = (id: number) => {
         setOrder(prevState => {
             return prevState.map((el) => {
                 if (id === el.id) {
-                    return {...el, count: el.count-1};
-                }else return el;
+                    return {...el, count: el.count - 1};
+                } else return el;
             });
         });
     };
@@ -48,14 +48,17 @@ function App() {
             return prevState.map((el) => {
                 if (id === el.id) {
                     return {...el, count: 0};
-                }else return el;
+                } else return el;
             });
         });
     };
 
     return (
         <div className={'container'}>
-            <OrderList order={order} onHandleOrder={onHandleOrder} onHandleDelete={onHandleDelete}/>
+            <OrderList order={order}
+                       onHandleOrder={onHandleOrder}
+                       onHandleDelete={onHandleDelete}
+            />
             <MenuList OnHandleMenu={onHandleMenu}/>
         </div>
     );

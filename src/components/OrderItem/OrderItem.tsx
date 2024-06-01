@@ -3,8 +3,8 @@ import MENU from '../../lib/Food.ts';
 import trash from '../../assets/trash.svg';
 
 interface Props {
-    onHandleOrder:React.MouseEventHandler;
-    onHandleDelete:React.MouseEventHandler;
+    onHandleOrder: React.MouseEventHandler;
+    onHandleDelete: React.MouseEventHandler;
     name: string;
     count: number;
     id: number;
